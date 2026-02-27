@@ -100,7 +100,7 @@ class ConversionService:
             from aiogram.types import BufferedInputFile
             await message.answer_document(
                 BufferedInputFile(output_bytes, filename=out_filename),
-                caption=f"✅ Converted in {duration:.1f}s",
+                caption=f"Converted in {duration:.1f}s",
             )
             await status_msg.delete()
 
@@ -111,7 +111,7 @@ class ConversionService:
                 record, error_message=str(exc), duration_seconds=duration
             )
             await status_msg.edit_text(
-                f"❌ Conversion failed: {exc}\n\nPlease try again or contact support."
+                f"Conversion failed: {exc}\n\nPlease try again or contact support."
             )
 
         finally:
